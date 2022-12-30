@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo-3.png";
 import { FaUser } from "react-icons/fa";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import Loader from "../Loader/Loader";
 
 const Navbar = () => {
 
-  const {user, logOut} = useContext(AuthContext);
+  const {user, logOut, loading} = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleLogOut = () =>{
     logOut()
-    .then()
+    .then(()=> {
+      navigate('/login');
+    })
     .then()
   }
 
@@ -30,6 +35,10 @@ const Navbar = () => {
       </li>
     </React.Fragment>
   );
+
+  if(loading){
+    return <Loader></Loader>
+  }
 
   return (
     <div className="navbar  w-[80%] mx-auto py-3">
@@ -102,10 +111,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
       {
-        user?.uid?.photoURL ?
+        user?.photoURL ?
         <li className="list-none">
-        <img src={user.photoURL} alt="" className="w-[50px] rounded-full"/>
-      </li>:
+        <img src={user.photoURL} alt="" className="w-[50px] h-[50px] rounded-full"/>
+      </li> :
       <li className="list-none">
       <FaUser></FaUser>
     </li>

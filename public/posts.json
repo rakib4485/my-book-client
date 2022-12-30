@@ -1,0 +1,66 @@
+[
+    {
+        "post_id": "01",
+        "author": "Helal Khan",
+        "email": "",
+        "img": "https://i.ibb.co/TcQJBQ2/315628896-1164831830784811-2998057924080579917-n.jpg",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti deserunt quia neque mollitia totam rem eius facilis aperiam! Provident, ab?",
+        "postImg": "https://i.ibb.co/LYc3CVy/IMG-20221202-161424-removebg-preview.png",
+        "react": 0,
+        "comments" : [
+            {
+                "name": "Kalam Mia",
+                "img": "",
+                "comment": "Very Nice"
+            }
+        ]
+    },
+    {
+        "post_id": "02",
+        "author": "Helal Khan",
+        "email": "",
+        "img": "",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti deserunt quia neque mollitia totam rem eius facilis aperiam! Provident, ab?",
+        "postImg": "https://i.ibb.co/TcQJBQ2/315628896-1164831830784811-2998057924080579917-n.jpg",
+        "react": 0,
+        "comments" : [
+            {
+                "name": "Kalam Mia",
+                "img": "",
+                "comment": "Very Nice"
+            }
+        ]
+    },
+    {
+        "post_id": "03",
+        "author": "Helal Khan",
+        "email": "",
+        "img": "",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti deserunt quia neque mollitia totam rem eius facilis aperiam! Provident, ab?",
+        "postImg": "",
+        "react": 0,
+        "comments" : [
+            {
+                "name": "Kalam Mia",
+                "img": "",
+                "comment": "Very Nice"
+            }
+        ]
+    },
+    {
+        "post_id": "04",
+        "author": "Helal Khan",
+        "email": "",
+        "img": "",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti deserunt quia neque mollitia totam rem eius facilis aperiam! Provident, ab?",
+        "postImg": "",
+        "react": 0,
+        "comments" : [
+            {
+                "name": "Kalam Mia",
+                "img": "",
+                "comment": "Very Nice"
+            }
+        ]
+    }
+]

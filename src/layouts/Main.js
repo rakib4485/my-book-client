@@ -7,7 +7,15 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className="flex justify-between mx-auto">
+                <div className='w-[25%]'>
+
+                </div>
+                <Outlet></Outlet>
+                <div className='w-[25%]'>
+
+                </div>
+            </div>
             <Footer></Footer>
         </div>
     );

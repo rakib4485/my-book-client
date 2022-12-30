@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaPhotoVideo, FaRegGrinAlt, FaVideo } from 'react-icons/fa';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import Loader from '../../Shared/Loader/Loader';
@@ -6,20 +6,25 @@ import PostModal from './PostModal';
 
 const PostCreate = () => {
 
-    const {user, loading} = useContext(AuthContext)
+    const {user, loading} = useContext(AuthContext);
+    const [openModal, setOpenModal] = useState(false);
 
     if(loading){
         return <Loader></Loader>
     }
 
+    const handleModal = () =>{
+        setOpenModal(true);
+    }
+
     return (
-        <div className=' md:w-[45%] mx-auto p-7 rounded-sm shadow-2xl'>
+        <div className='lg:w-[70%] mx-auto p-7 rounded-sm shadow-xl'>
             <div className="flex items-center mx-auto px-5">
                 <div className=''>
                     <img src={user?.photoURL} alt="" className='w-[50px] rounded-full' />
                 </div>
                 <div className='w-full ml-3'>
-                <label htmlFor="post-create-modal" className="btn btn-active btn-ghost btn-block rounded-3xl">What's on your mind?</label>
+                <label onClick={handleModal} htmlFor="post-create-modal" className="btn btn-active btn-ghost btn-block rounded-3xl">What's on your mind?</label>
                 </div>
             </div>
             <div className="divider"></div>
@@ -31,7 +36,7 @@ const PostCreate = () => {
                     <p className="text-sm lg:text-xl ml-2">Live video</p>
                 </div>
                 <div className='flex justify-center items-center'>
-                <label htmlFor="post-create-modal" className="btn btn-ghost">
+                <label onClick={handleModal} htmlFor="post-create-modal" className="btn btn-ghost">
                 <FaPhotoVideo className=' text-4xl text-success'></FaPhotoVideo>
                     <p className="text-lg ml-2">Photo/Video</p>
                 </label>
@@ -43,7 +48,12 @@ const PostCreate = () => {
                 </div>
             </div>
 
-            <PostModal></PostModal>
+            {
+                openModal === true &&
+                <PostModal
+                    setOpenModal = {setOpenModal}
+                ></PostModal>
+            }
         </div>
     );
 };

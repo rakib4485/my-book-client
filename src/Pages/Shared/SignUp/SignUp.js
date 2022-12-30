@@ -27,7 +27,8 @@ const SignUp = () => {
             console.log(user);
             updateUser(userInfo)
             .then( () => {
-                navigate('/')
+              saveUser(name, email)
+              navigate('/')
             })
             .then()
         })
@@ -38,11 +39,27 @@ const SignUp = () => {
         googleSignIn()
         .then(result => {
             const user = result.user;
-            console.log(user);
-            navigate('/')
+            const {displayName, email} = user;
+            console.log(displayName);
+            navigate('/');
         })
         .then(err => {
         })
+    }
+
+    const saveUser = (name, email) => {
+      const user = {name, email};
+      fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
     }
 
     return (

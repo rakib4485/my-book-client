@@ -36,7 +36,7 @@ const Login = () => {
             console.log(user);
             navigate('/')
         })
-        .then(err => {
+        .catch(err => {
             console.error(err);
         })
     }
