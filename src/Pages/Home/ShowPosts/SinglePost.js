@@ -26,7 +26,7 @@ const SinglePost = ({post, refetch}) => {
     }
 
     return (
-        <div className='w-[70%] mx-auto my-7 p-7 border rounded-xl'>
+        <div className='w-[100%] mx-auto my-7 p-7 border rounded-xl'>
             <div className="flex items-center">
                 {
                     img ?

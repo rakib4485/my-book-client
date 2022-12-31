@@ -16,7 +16,7 @@ const ShowPosts = () => {
     const reversePosts = [...posts].reverse();
 
     return (
-        <div>
+        <div className='w-[550px] mx-auto'>
             {
                 reversePosts.map( post => <SinglePost
                     key={post._id}

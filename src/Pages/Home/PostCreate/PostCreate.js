@@ -18,7 +18,7 @@ const PostCreate = () => {
     }
 
     return (
-        <div className='lg:w-[70%] mx-auto p-7 rounded-sm shadow-xl'>
+        <div className='lg:w-[550px] mx-auto p-7 rounded-sm shadow-xl'>
             <div className="flex items-center mx-auto px-5">
                 <div className=''>
                     <img src={user?.photoURL} alt="" className='w-[50px] rounded-full' />

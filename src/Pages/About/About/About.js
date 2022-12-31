@@ -1,9 +1,12 @@
 import React from 'react';
+import MyPosts from '../MyPosts/MyPosts';
+import ProfileSection from '../ProfileSection/ProfileSection';
 
 const About = () => {
     return (
-        <div>
-            <h2>This is about Page</h2>
+        <div className='w-[550px] mx-auto'>
+            <ProfileSection></ProfileSection>
+            <MyPosts></MyPosts>
         </div>
     );
 };
