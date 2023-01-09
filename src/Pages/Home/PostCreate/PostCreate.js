@@ -18,7 +18,7 @@ const PostCreate = () => {
     }
 
     return (
-        <div className='lg:w-[550px] mx-auto p-7 rounded-sm shadow-xl'>
+        <div className='w-[350px] md:w-[550px] mx-auto py-7 , rounded-sm shadow-xl'>
             <div className="flex items-center mx-auto px-5">
                 <div className=''>
                     <img src={user?.photoURL} alt="" className='w-[50px] rounded-full' />
@@ -37,8 +37,8 @@ const PostCreate = () => {
                 </div>
                 <div className='flex justify-center items-center'>
                 <label onClick={handleModal} htmlFor="post-create-modal" className="btn btn-ghost">
-                <FaPhotoVideo className=' text-4xl text-success'></FaPhotoVideo>
-                    <p className="text-lg ml-2">Photo/Video</p>
+                <FaPhotoVideo className='text-xl md:text-4xl text-success'></FaPhotoVideo>
+                    <p className="text-sm md:text-lg ml-2">Photo/Video</p>
                 </label>
                     
                 </div>

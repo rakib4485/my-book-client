@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const AddComment = (post, refetch) => {
@@ -6,6 +7,7 @@ const AddComment = (post, refetch) => {
     const {_id} = post.post;
 
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleComment = event =>{
         event.preventDefault();
@@ -19,8 +21,12 @@ const AddComment = (post, refetch) => {
             comment: message
         }
 
+        if(!user){
+            navigate('/login');
+        }
 
-        fetch(`http://localhost:5000/allposts/${_id}/comments`, {
+        else{
+            fetch(`https://mybook-server.vercel.app/allposts/${_id}/comments`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -30,10 +36,12 @@ const AddComment = (post, refetch) => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            form.reset();
+            form.reset()
+            refetch();
         })
 
         console.log(newComment);
+        }
     }
     return (
         <div className='my-2'>

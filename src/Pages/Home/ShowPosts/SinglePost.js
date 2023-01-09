@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaRegCommentDots, FaShareAlt, FaThumbsUp, FaUser } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import AddComment from './AddComment';
 import ShowComments from './ShowComments';
 
 const SinglePost = ({post, refetch}) => {
+
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const {_id, author, img, description, postImg, react, comments} = post;
 
@@ -12,7 +17,12 @@ const SinglePost = ({post, refetch}) => {
 
     const handleReact = (id) => {
 
-        fetch(`http://localhost:5000/allposts/${id}`, {
+        if(!user){
+            navigate('/login');
+        }
+
+        else{
+            fetch(`https://mybook-server.vercel.app/allposts/${id}`, {
             method: 'PUT',
             headers: {
             }
@@ -23,6 +33,7 @@ const SinglePost = ({post, refetch}) => {
                 refetch();
             }
         })
+        }
     }
 
     return (

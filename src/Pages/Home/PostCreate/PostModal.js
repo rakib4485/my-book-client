@@ -43,7 +43,7 @@ const PostModal = ({setOpenModal}) => {
 
         console.log(post);
 
-        fetch('http://localhost:5000/allposts', {
+        fetch('https://mybook-server.vercel.app/allposts', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json',

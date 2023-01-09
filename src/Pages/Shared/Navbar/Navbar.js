@@ -41,7 +41,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar  w-[80%] mx-auto py-3">
+    <div className="navbar  md:w-[80%] mx-auto py-3">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -109,11 +109,11 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="md:navbar-end">
       {
         user?.photoURL ?
         <li className="list-none">
-        <img src={user.photoURL} alt="" className="w-[50px] h-[50px] rounded-full"/>
+        <img src={user.photoURL} alt="" className="w-[50px] h-[50px] rounded-full hidden md:block"/>
       </li> :
       <li className="list-none">
       <FaUser></FaUser>

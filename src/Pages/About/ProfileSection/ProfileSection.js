@@ -9,10 +9,10 @@ const ProfileSection = () => {
 
     const {user} = useContext(AuthContext)
 
-    const {data: users = [] , refetch} = useQuery({
+    const {data: users = []} = useQuery({
         queryKey: ['users'],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/users/${user.email}`);
+            const res = await fetch(`https://mybook-server.vercel.app/users/${user.email}`);
             const data = await res.json();
             return data;
         }
@@ -20,7 +20,7 @@ const ProfileSection = () => {
 
     return (
         <div className='min-h-screen'>
-            <div className="cover-img w-[550px] h-64 rounded-md">
+            <div className="cover-img w-[350px] md:w-[550px] h-44 md:h-64 rounded-md">
                 {
                     users?.cover ?
                     <img src={users.cover} alt="" className='w-full h-full rounded-md' />

@@ -4,7 +4,7 @@ import ProfileSection from '../ProfileSection/ProfileSection';
 
 const About = () => {
     return (
-        <div className='w-[550px] mx-auto'>
+        <div className='w-[350px] md:w-[550px] mx-auto'>
             <ProfileSection></ProfileSection>
             <MyPosts></MyPosts>
         </div>

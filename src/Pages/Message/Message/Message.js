@@ -1,9 +1,10 @@
 import React from 'react';
+import comingSoon from '../../../assets/commingSoon.jpg'
 
 const Message = () => {
     return (
         <div>
-            <h1>This is Message Page</h1>
+            <img src={comingSoon} alt="" />
         </div>
     );
 };

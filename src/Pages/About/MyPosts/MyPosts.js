@@ -6,12 +6,12 @@ import Loader from '../../Shared/Loader/Loader';
 
 const MyPosts = () => {
 
-    const {user, loading} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     const {data: posts = [] , refetch , isLoading} = useQuery({
         queryKey: ['post'],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/myposts/${user.email}`);                               
+            const res = await fetch(`https://mybook-server.vercel.app/myposts/${user.email}`);                               
             const data = await res.json();
             return data;
         }
